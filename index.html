@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#ed7298">
+    <meta
+        name="description"
+        content="Un pequeño rincón hecho con mucho cariño para una persona especial."
+    >
+
+    <title>Para mi niña bonita ❤️</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --fondo: #fff5f8;
+            --fondo-secundario: #fffafb;
+            --tarjeta: rgba(255, 255, 255, 0.88);
+
+            --texto: #513b45;
+            --suave: #977d88;
+
+            --rosa: #ed7298;
+            --rosa-claro: #f8b6ca;
+            --rosa-fuerte: #d94f7b;
+
+            --blanco: #ffffff;
+
+            --borde: rgba(217, 79, 123, 0.14);
+
+            --sombra:
+                0 20px 60px rgba(190, 91, 125, 0.13);
+
+            --sombra-hover:
+                0 25px 70px rgba(190, 91, 125, 0.22);
+
+            --radio: 24px;
+
+            --transicion:
+                all 0.35s ease;
+        }
+
+
+        /* =========================================================
+           MODO OSCURO
+        ========================================================= */
+
+        body.oscuro {
+
+            --fondo: #171219;
+            --fondo-secundario: #1e1721;
+
+            --tarjeta: rgba(43, 32, 47, 0.90);
+
+            --texto: #fff0f5;
+            --suave: #c9b3c0;
+
+            --rosa: #ff8eaf;
+            --rosa-claro: #ffb4c9;
+            --rosa-fuerte: #ffabc4;
+
+            --borde: rgba(255, 142, 175, 0.16);
+
+            --sombra:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            --sombra-hover:
+                0 25px 70px rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(244, 142, 174, 0.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(244, 142, 174, 0.10),
+                    transparent 30%
+                ),
+                var(--fondo);
+
+            color: var(--texto);
+
+            font-family: "DM Sans", sans-serif;
+
+            overflow-x: hidden;
+
+            transition:
+                background 0.5s ease,
+                color 0.5s ease;
+        }
+
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =========================================================
+           FONDO DECORATIVO
+        ========================================================= */
+
+        #corazones {
+            position: fixed;
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        .corazon {
+            position: absolute;
+
+            bottom: -60px;
+
+            color: var(--rosa);
+
+            opacity: 0.28;
+
+            animation:
+                subirCorazon linear forwards;
+        }
+
+
+        @keyframes subirCorazon {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.35;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+           NAVEGACIÓN
+        ========================================================= */
+
+        nav {
+            position: relative;
+
+            z-index: 10;
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 24px clamp(20px, 8vw, 100px);
+        }
+
+
+        .logo {
+            font-family: "Great Vibes", cursive;
+
+            font-size: 34px;
+
+            color: var(--rosa-fuerte);
+
+            text-decoration: none;
+
+            text-shadow:
+                0 4px 20px rgba(217, 79, 123, 0.15);
+        }
+
+
+        .nav-botones {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .modo,
+        .musica-btn {
+            border: 1px solid var(--borde);
+
+            background: var(--tarjeta);
+
+            color: var(--texto);
+
+            padding: 10px 16px;
+
+            border-radius: 999px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            backdrop-filter: blur(15px);
+
+            transition: var(--transicion);
+        }
+
+
+        .modo:hover,
+        .musica-btn:hover {
+            transform: translateY(-2px);
+
+            background: var(--rosa);
+
+            color: white;
+
+            border-color: var(--rosa);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+
+            z-index: 1;
+
+            min-height: 620px;
+
+            padding:
+                80px 20px
+                110px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .hero-contenido {
+            width: 100%;
+
+            max-width: 800px;
+
+            animation:
+                aparecerHero 1s ease;
+        }
+
+
+        @keyframes aparecerHero {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        .corazon-hero {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 34px;
+
+            animation:
+                latido 1.8s infinite;
+        }
+
+
+        @keyframes latido {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+
+        .etiqueta {
+            display: inline-block;
+
+            color: var(--rosa-fuerte);
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+        }
+
+
+        h1 {
+            font-family: "Great Vibes", cursive;
+
+            font-size: clamp(
+                65px,
+                12vw,
+                120px
+            );
+
+            font-weight: 400;
+
+            color: var(--rosa-fuerte);
+
+            line-height: 1.05;
+
+            margin: 10px 0 25px;
+
+            text-shadow:
+                0 10px 35px rgba(217, 79, 123, 0.15);
+        }
+
+
+        .hero p {
+            max-width: 590px;
+
+            margin:
+                0 auto
+                35px;
+
+            color: var(--suave);
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           BOTONES
+        ========================================================= */
+
+        .boton {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f48eae,
+                    #d95383
+                );
+
+            color: white;
+
+            padding:
+                15px 28px;
+
+            border-radius: 999px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 12px 30px
+                rgba(217, 83, 131, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .boton:hover {
+            transform:
+                translateY(-4px)
+                scale(1.02);
+
+            box-shadow:
+                0 18px 35px
+                rgba(217, 83, 131, 0.35);
+        }
+
+
+        .boton:active {
+            transform:
+                translateY(-1px)
+                scale(0.98);
+        }
+
+
+        /* =========================================================
+           SECCIONES
+        ========================================================= */
+
+        .seccion {
+            position: relative;
+
+            z-index: 1;
+
+            padding:
+                75px
+                clamp(20px, 8vw, 100px);
+        }
+
+
+        .seccion + .seccion {
+            padding-top: 30px;
+        }
+
+
+        .titulo {
+            font-family: "Great Vibes", cursive;
+
+            color: var(--rosa-fuerte);
+
+            font-size: clamp(
+                44px,
+                6vw,
+                58px
+            );
+
+            font-weight: 400;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+        }
+
+
+        .subtitulo {
+            max-width: 650px;
+
+            margin:
+                0 auto
+                35px;
+
+            text-align: center;
+
+            color: var(--suave);
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           CARTA
+        ========================================================= */
+
+        .carta {
+            width: 100%;
+
+            max-width: 760px;
+
+            margin: 35px auto;
+
+            padding:
+                clamp(28px, 5vw, 50px);
+
+            background: var(--tarjeta);
+
+            border:
+                1px solid var(--borde);
+
+            border-radius:
+                var(--radio);
+
+            box-shadow:
+                var(--sombra);
+
+            backdrop-filter:
+                blur(20px);
+
+            transition:
+                var(--transicion);
+        }
+
+
+        .carta:hover {
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                var(--sombra-hover);
+        }
+
+
+        .carta::before {
+            content: "♥";
+
+            display: block;
+
+            text-align: center;
+
+            color: var(--rosa-claro);
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .carta h3 {
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            color:
+                var(--rosa-fuerte);
+
+            font-size: 42px;
+
+            font-weight: 400;
+
+            margin-bottom: 20px;
+        }
+
+
+        .carta p {
+            color: var(--texto);
+
+            font-size: 16px;
+
+            line-height: 2;
+
+            margin-bottom: 18px;
+        }
+
+
+        #textoCarta {
+            display: none;
+
+            animation:
+                aparecerCarta 0.7s ease;
+        }
+
+
+        #textoCarta.visible {
+            display: block;
+        }
+
+
+        @keyframes aparecerCarta {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        .firma {
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 38px;
+
+            color:
+                var(--rosa-fuerte);
+
+            text-align: right;
+
+            margin-top: 25px;
+        }
+
+
+        .centrado {
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           CARRUSEL
+        ========================================================= */
+
+        .carrusel {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 720px;
+
+            margin: 40px auto;
+
+            padding: 14px;
+
+            background:
+                var(--tarjeta);
+
+            border:
+                1px solid var(--borde);
+
+            border-radius:
+                28px;
+
+            box-shadow:
+                var(--sombra);
+
+            backdrop-filter:
+                blur(20px);
+
+            overflow: hidden;
+        }
+
+
+        .carrusel-contenedor {
+            position: relative;
+
+            width: 100%;
+        }
+
+
+        .slide {
+            display: none;
+
+            text-align: center;
+
+            animation:
+                aparecerSlide 0.55s ease;
+        }
+
+
+        .slide.activo {
+            display: block;
+        }
+
+
+        @keyframes aparecerSlide {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateX(20px)
+                    scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateX(0)
+                    scale(1);
+            }
+        }
+
+
+        .foto {
+            position: relative;
+
+            width: 100%;
+
+            height: 470px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe0e9,
+                    #f6b5ca
+                );
+        }
+
+
+        .foto::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.12),
+                    transparent 35%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .foto img {
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+
+        .foto:hover img {
+            transform:
+                scale(1.045);
+        }
+
+
+        .slide h3 {
+            color:
+                var(--rosa-fuerte);
+
+            font-size: 22px;
+
+            margin:
+                22px 0 7px;
+        }
+
+
+        .slide p {
+            color:
+                var(--suave);
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            padding:
+                0 15px
+                12px;
+        }
+
+
+        /* =========================================================
+           FLECHAS
+        ========================================================= */
+
+        .carrusel-btn {
+            position: absolute;
+
+            top: 43%;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 3;
+
+            width: 46px;
+
+            height: 46px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.92);
+
+            color:
+                #d94f7b;
+
+            font-size: 20px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 0, 0, 0.15);
+
+            transition:
+                var(--transicion);
+        }
+
+
+        .carrusel-btn:hover {
+            background:
+                var(--rosa);
+
+            color:
+                white;
+
+            transform:
+                translateY(-50%)
+                scale(1.1);
+        }
+
+
+        .anterior {
+            left: 28px;
+        }
+
+
+        .siguiente {
+            right: 28px;
+        }
+
+
+        /* =========================================================
+           INDICADORES
+        ========================================================= */
+
+        .indicadores {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                17px 0 5px;
+        }
+
+
+        .punto {
+            width: 9px;
+
+            height: 9px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            background:
+                #e9b8c8;
+
+            padding: 0;
+
+            transition:
+                all 0.3s ease;
+        }
+
+
+        .punto:hover {
+            transform:
+                scale(1.3);
+        }
+
+
+        .punto.activo {
+            width: 28px;
+
+            background:
+                var(--rosa-fuerte);
+        }
+
+
+        /* =========================================================
+           MOTIVOS
+        ========================================================= */
+
+        .motivos {
+            width: 100%;
+
+            max-width: 850px;
+
+            margin: 35px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .motivo {
+            padding:
+                28px 22px;
+
+            background:
+                var(--tarjeta);
+
+            border:
+                1px solid var(--borde);
+
+            box-shadow:
+                var(--sombra);
+
+            border-radius:
+                20px;
+
+            text-align: center;
+
+            line-height: 1.7;
+
+            transition:
+                var(--transicion);
+        }
+
+
+        .motivo:hover {
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                var(--sombra-hover);
+        }
+
+
+        .motivo span {
+            display: block;
+
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================================================
+           FRASE
+        ========================================================= */
+
+        .frase {
+            width: 100%;
+
+            max-width: 700px;
+
+            min-height: 140px;
+
+            margin:
+                35px auto;
+
+            padding:
+                30px;
+
+            border-radius:
+                24px;
+
+            background:
+                var(--tarjeta);
+
+            border:
+                1px solid var(--borde);
+
+            box-shadow:
+                var(--sombra);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            color:
+                var(--rosa-fuerte);
+
+            font-size:
+                clamp(
+                    29px,
+                    5vw,
+                    38px
+                );
+
+            line-height: 1.4;
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .frase.cambiando {
+            opacity: 0;
+
+            transform:
+                scale(0.96);
+        }
+
+
+        /* =========================================================
+           CONTADOR
+        ========================================================= */
+
+        .contador {
+            max-width: 700px;
+
+            margin:
+                40px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .contador-item {
+            padding:
+                20px 10px;
+
+            background:
+                var(--tarjeta);
+
+            border:
+                1px solid var(--borde);
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                var(--sombra);
+        }
+
+
+        .contador-numero {
+            display: block;
+
+            color:
+                var(--rosa-fuerte);
+
+            font-size: 27px;
+
+            font-weight: 700;
+        }
+
+
+        .contador-label {
+            color:
+                var(--suave);
+
+            font-size: 12px;
+
+            margin-top: 4px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            position: relative;
+
+            z-index: 1;
+
+            text-align: center;
+
+            padding:
+                70px 20px 45px;
+
+            color:
+                var(--suave);
+
+            line-height: 2;
+        }
+
+
+        footer strong {
+            color:
+                var(--rosa-fuerte);
+        }
+
+
+        .footer-corazon {
+            display: block;
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding:
+                    18px 6%;
+            }
+
+
+            .logo {
+                font-size: 28px;
+            }
+
+
+            .nav-botones {
+                gap: 5px;
+            }
+
+
+            .modo,
+            .musica-btn {
+                padding:
+                    9px 11px;
+
+                font-size: 12px;
+            }
+
+
+            .hero {
+                min-height: 560px;
+
+                padding:
+                    60px 20px 90px;
+            }
+
+
+            .hero p {
+                font-size: 15px;
+            }
+
+
+            .seccion {
+                padding:
+                    60px 6%;
+            }
+
+
+            .carta {
+                padding:
+                    28px 22px;
+            }
+
+
+            .carta h3 {
+                font-size: 36px;
+            }
+
+
+            .motivos {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .foto {
+                height: 390px;
+            }
+
+
+            .carrusel {
+                padding: 10px;
+
+                border-radius:
+                    20px;
+            }
+
+
+            .carrusel-btn {
+                width: 38px;
+
+                height: 38px;
+
+                font-size: 16px;
+            }
+
+
+            .anterior {
+                left: 16px;
+            }
+
+
+            .siguiente {
+                right: 16px;
+            }
+
+
+            .contador {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .logo {
+                font-size: 25px;
+            }
+
+
+            .musica-btn {
+                display: none;
+            }
+
+
+            h1 {
+                font-size:
+                    clamp(
+                        58px,
+                        17vw,
+                        80px
+                    );
+            }
+
+
+            .foto {
+                height: 310px;
+            }
+
+
+            .carrusel-btn {
+                width: 34px;
+
+                height: 34px;
+            }
+
+
+            .frase {
+                min-height: 125px;
+
+                padding:
+                    22px;
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .modo {
+                padding:
+                    8px 10px;
+
+                font-size: 11px;
+            }
+
+
+            .foto {
+                height: 270px;
+            }
+
+
+            .titulo {
+                font-size: 40px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Corazones -->
+    <div id="corazones" aria-hidden="true"></div>
+
+
+    <!-- =====================================================
+         NAVEGACIÓN
+    ====================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            Para mi cachetona ♡
+        </div>
+
+
+        <div class="nav-botones">
+
+          <button class="musica-btn" id="musicaBtn" 
+          type="button" onclick="controlarMusica()" >
+          🎵 Música </button>
+            <button
+                class="modo"
+                id="modoBtn"
+                type="button"
+                onclick="cambiarModo()"
+                aria-label="Cambiar modo de color"
+            >
+                🌙 Modo oscuro
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PORTADA
+    ====================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-contenido">
+
+            <span
+                class="corazon-hero"
+                aria-hidden="true"
+            >
+                ❤️
+            </span>
+
+
+            <div class="etiqueta">
+                Una página hecha con cariño
+            </div>
+
+
+            <h1>
+                Para mi niña bonita
+            </h1>
+
+
+            <p>
+                No sé si existen las palabras perfectas para
+                decirte lo mucho que significas para mí,
+                pero hice esta pequeña pagina para ti para recordarte
+                lo especial que eres. ❤️
+            </p>
+
+
+            <button
+                class="boton"
+                type="button"
+                onclick="irCarta()"
+            >
+                💌 Tengo algo que decirte
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CARTA
+    ====================================================== -->
+
+    <section
+        class="seccion"
+        id="carta"
+    >
+
+        <h2 class="titulo">
+            Una cartita para ti
+        </h2>
+
+
+        <p class="subtitulo">
+            Hay cosas que quiero decirte y hoy quiero
+            escribirlas aquí.
+        </p>
+
+
+        <div class="carta">
+
+            <h3>
+                Mi cachetona ❤️
+            </h3>
+
+
+            <p>
+                Desde que llegaste a mi vida, hay algo diferente
+                en mis días. Me encanta conocerte, hablar contigo,
+                saber cómo estás y encontrar cualquier excusa
+                para hacerte sonreír.
+            </p>
+
+
+            <div id="textoCarta">
+
+                <p>
+                    Quiero que sepas que me pareces una persona
+                    increíble. Me gusta tu forma de ser, tu sonrisa,
+                    tu manera de expresarte y esos pequeños detalles
+                    que te hacen tan única.
+                </p>
+
+
+                <p>
+                    No te prometo que todos los días serán perfectos,
+                    pero sí quiero que sepas que me hace ilusión
+                    compartir momentos contigo, apoyarte, escucharte
+                    y seguir descubriendo todo lo bonito que hay en ti.
+                </p>
+
+
+                <p>
+                    Si pudiera pedir un deseo, sería tener muchísimas
+                    oportunidades más para verte sonreír.
+                    Gracias por darme la oportunidad de conocerte. 💗
+                </p>
+
+                <p>
+                    Gerald me gustas mucho me acuerdo que una vez escuché esta
+                    canción y pensé en ti y es de tu cantante favorito
+                    Desde que llegaste, mi corazón no se queda; contigo quiero escribir nuestra propia novela. 💗
+                </p>
+                <div class="firma">
+                    Con mucho cariño, tu persona ❤️
+                </div>
+
+            </div>
+
+
+            <div class="centrado">
+
+                <button
+                    class="boton"
+                    id="abrirCarta"
+                    type="button"
+                    onclick="abrirCarta()"
+                >
+                    Abrir mi corazón 💗
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOTOS
+    ====================================================== -->
+
+    <section class="seccion">
+
+        <h2 class="titulo">
+            Espero te gusten y no me pegues ❤️
+        </h2>
+
+
+        <div
+            class="carrusel"
+            id="carrusel"
+        >
+
+            <div
+                class="carrusel-contenedor"
+                id="carruselContenedor"
+            >
+
+                <!-- FOTO 1 -->
+
+                <div class="slide activo">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen.jpeg"
+                            alt="Nuestro primer recuerdo"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Me gustan muchos tus labios ❤️
+                    </h3>
+                    <p>
+                        Porque me recuerdan a ti.
+                    </p>
+                </div>
+
+
+                <!-- FOTO 2 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen2.jpeg"
+                            alt="Un momento especial"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Tu sonrisa 💗
+                    </h3>
+
+                    <p>
+                        Porque verla siempre consigue alegrarme
+                        el día.
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen3.jpg"
+                            alt="Un recuerdo juntos"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Me gustan mucho tus ojitos ✨
+                    </h3>
+
+                    <p>
+                        Tus ojitos brillan como estrellas en la oscuridad.
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 4 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen4.jpg"
+                            alt="Un recuerdo especial"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Tú 🌷
+                    </h3>
+
+                    <p>
+                        Simplemente tú, siendo esa persona
+                        tan especial y con unica esencia.
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 5 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen5.jpeg"
+                            alt="Otro recuerdo especial"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Tienes un amor puro 🥰
+                    </h3>
+
+                    <p>
+                        Y eso me hace sentirme muy afortunado
+                        de tenerte en mi vida.
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 6 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen6.jpeg"
+                            alt="Un recuerdo juntos"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Eres una chica valiente 🫶
+                    </h3>
+
+                    <p>
+                        Porque siempre si pa delante.
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 7 -->
+
+                <div class="slide">
+
+                    <div class="foto">
+
+                        <img
+                            src="fotos/imagen7.jpeg"
+                            alt="Nuestro recuerdo favorito"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Y todavía faltan muchos... ❤️
+                    </h3>
+
+                    <p>
+                        Esta historia apenas está comenzando.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Flechas -->
+
+            <button
+                class="carrusel-btn anterior"
+                type="button"
+                onclick="moverSlide(-1)"
+                aria-label="Foto anterior"
+            >
+                &#10094;
+            </button>
+
+
+            <button
+                class="carrusel-btn siguiente"
+                type="button"
+                onclick="moverSlide(1)"
+                aria-label="Foto siguiente"
+            >
+                &#10095;
+            </button>
+
+
+            <!-- Indicadores -->
+
+            <div
+                class="indicadores"
+                id="indicadores"
+                aria-label="Indicadores del carrusel"
+            >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MOTIVOS
+    ====================================================== -->
+
+    <section class="seccion">
+
+        <h2 class="titulo">
+            ¿Sabes por qué me gustas?
+        </h2>
+
+
+        <p class="subtitulo">
+            Hay muchísimas razones, pero aquí van algunas.
+        </p>
+
+
+        <div class="motivos">
+
+            <div class="motivo">
+
+                <span>🥰</span>
+
+                Tu sonrisa, porque ilumina mis días.
+
+            </div>
+
+
+            <div class="motivo">
+
+                <span>💗</span>
+
+                Tu forma de ser, porque eres única.
+
+            </div>
+
+
+            <div class="motivo">
+
+                <span>✨</span>
+
+                Tu mirada, porque tiene algo especial.
+
+            </div>
+
+
+            <div class="motivo">
+
+                <span>🫶</span>
+
+                Tu compañía, porque me encanta compartir contigo.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FRASES
+    ====================================================== -->
+
+    <section class="seccion">
+
+        <h2 class="titulo">
+            Un mensajito para ti
+        </h2>
+
+
+        <p class="subtitulo">
+            Presiona el botón y descubre algo bonito.
+        </p>
+
+
+        <div
+            class="frase"
+            id="frase"
+        >
+            Eres mi casualidad más bonita. 💕
+        </div>
+
+
+        <div class="centrado">
+
+            <button
+                class="boton"
+                type="button"
+                onclick="nuevaFrase()"
+            >
+                Otra frase para mi niña 🌸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTADOR
+    ====================================================== -->
+
+    <section class="seccion">
+
+        <h2 class="titulo">
+            Y esto recién comienza... ♾️
+        </h2>
+
+
+        <p class="subtitulo">
+            Cada día es una nueva oportunidad para crear
+            un recuerdo bonito contigo.
+        </p>
+
+
+        <div class="contador">
+
+            <div class="contador-item">
+
+                <span
+                    class="contador-numero"
+                    id="dias"
+                >
+                    0
+                </span>
+
+                <span class="contador-label">
+                    días
+                </span>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span
+                    class="contador-numero"
+                    id="horas"
+                >
+                    0
+                </span>
+
+                <span class="contador-label">
+                    horas
+                </span>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span
+                    class="contador-numero"
+                    id="minutos"
+                >
+                    0
+                </span>
+
+                <span class="contador-label">
+                    minutos
+                </span>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span
+                    class="contador-numero"
+                    id="segundos"
+                >
+                    0
+                </span>
+
+                <span class="contador-label">
+                    segundos
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <span
+            class="footer-corazon"
+            aria-hidden="true"
+        >
+            ❤️
+        </span>
+
+
+        Hecho con muchísimo cariño
+        <strong>para ti</strong>
+
+
+        <br>
+
+
+        <span>
+            Si volviera a empezar,
+            me encantaría conocerte otra vez.
+        </span>
+
+
+        <br>
+
+
+        <span>
+            ∞
+        </span>
+
+    </footer>
+
+
+    <!-- =====================================================
+         AUDIO OPCIONAL
+    ====================================================== -->
+
+    <!--
+        Si quieres música, coloca un archivo llamado:
+
+        musica.mp3
+
+        dentro de la carpeta:
+
+        /fotos/
+
+        También puedes cambiar la ruta en JavaScript.
+    -->
+
+    <audio
+        id="musica"
+        loop
+        preload="none"
+    >
+        <source
+            src="fotos/musica.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           MODO OSCURO
+        ====================================================== */
+
+        const modoBtn =
+            document.getElementById("modoBtn");
+
+
+        function actualizarModo() {
+
+            const oscuro =
+                document.body.classList.contains("oscuro");
+
+
+            modoBtn.textContent =
+                oscuro
+                    ? "☀️ Modo claro"
+                    : "🌙 Modo oscuro";
+        }
+
+
+        function cambiarModo() {
+
+            document.body.classList.toggle("oscuro");
+
+
+            const oscuro =
+                document.body.classList.contains("oscuro");
+
+
+            localStorage.setItem(
+                "modoOscuro",
+                oscuro
+            );
+
+
+            actualizarModo();
+        }
+
+
+        if (
+            localStorage.getItem("modoOscuro")
+            === "true"
+        ) {
+
+            document.body.classList.add("oscuro");
+        }
+
+
+        actualizarModo();
+
+
+        /* =====================================================
+           IR A LA CARTA
+        ====================================================== */
+
+        function irCarta() {
+
+            document
+                .getElementById("carta")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+        }
+
+
+        /* =====================================================
+           ABRIR / CERRAR CARTA
+        ====================================================== */
+
+        function abrirCarta() {
+
+            const texto =
+                document.getElementById("textoCarta");
+
+            const boton =
+                document.getElementById("abrirCarta");
+
+
+            const abierta =
+                texto.classList.toggle("visible");
+
+
+            boton.textContent =
+                abierta
+                    ? "Cerrar cartita 💌"
+                    : "Abrir mi corazón 💗";
+        }
+
+
+        /* =====================================================
+           FRASES
+        ====================================================== */
+
+        const frases = [
+
+            "Eres mi casualidad más bonita. 💕",
+
+            "Mi lugar favorito es donde puedo verte sonreír. 🌷",
+
+            "Qué bonito es coincidir contigo. ❤️",
+
+            "Si pienso en algo bonito, inevitablemente pienso en ti. 🥹",
+
+            "No necesito un día especial para recordarte que me encantas. 💗",
+
+            "Eres una de mis razones favoritas para sonreír. ✨",
+
+            "Ojalá la vida nos regale muchos momentos juntos. 🫶",
+
+            "Me encanta la tranquilidad que siento cuando hablo contigo. 🌸",
+
+            "De todas las coincidencias de la vida, conocerte fue mi favorita. ❤️",
+
+            "No sé qué tenga el futuro, pero me gustaría descubrirlo contigo. 💕",
+
+            "Tienes una manera muy bonita de quedarte en mis pensamientos. 🥰",
+
+            "A veces una persona llega y hace que todo se sienta un poquito más bonito. Tú eres esa persona. 💗"
+
+        ];
+
+
+        let ultimaFrase = 0;
+
+
+        function nuevaFrase() {
+
+            const elemento =
+                document.getElementById("frase");
+
+
+            let indice;
+
+
+            do {
+
+                indice =
+                    Math.floor(
+                        Math.random()
+                        * frases.length
+                    );
+
+            } while (
+                indice === ultimaFrase
+                && frases.length > 1
+            );
+
+
+            ultimaFrase = indice;
+
+
+            elemento.classList.add(
+                "cambiando"
+            );
+
+
+            setTimeout(() => {
+
+                elemento.textContent =
+                    frases[indice];
+
+
+                elemento.classList.remove(
+                    "cambiando"
+                );
+
+            }, 250);
+        }
+
+
+        /* =====================================================
+           CORAZONES FLOTANTES
+        ====================================================== */
+
+        function crearCorazon() {
+
+            const contenedor =
+                document.getElementById("corazones");
+
+
+            const corazon =
+                document.createElement("span");
+
+
+            corazon.className =
+                "corazon";
+
+
+            const simbolos = [
+                "♥",
+                "♡",
+                "💗",
+                "💕",
+                "❤"
+            ];
+
+
+            corazon.textContent =
+                simbolos[
+                    Math.floor(
+                        Math.random()
+                        * simbolos.length
+                    )
+                ];
+
+
+            corazon.style.left =
+                Math.random() * 100 + "vw";
+
+
+            corazon.style.fontSize =
+                14
+                + Math.random() * 22
+                + "px";
+
+
+            corazon.style.animationDuration =
+                7
+                + Math.random() * 8
+                + "s";
+
+
+            contenedor.appendChild(
+                corazon
+            );
+
+
+            setTimeout(() => {
+
+                corazon.remove();
+
+            }, 16000);
+        }
+
+
+        setInterval(
+            crearCorazon,
+            850
+        );
+
+
+        /* =====================================================
+           CARRUSEL
+        ====================================================== */
+
+        let slideActual = 0;
+
+
+        const slides =
+            document.querySelectorAll(
+                ".slide"
+            );
+
+
+        const indicadores =
+            document.getElementById(
+                "indicadores"
+            );
+
+
+        /* Crear automáticamente los puntos */
+
+        slides.forEach(
+            (_, indice) => {
+
+                const punto =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                punto.className =
+                    "punto";
+
+
+                punto.type =
+                    "button";
+
+
+                punto.setAttribute(
+                    "aria-label",
+                    `Ir a la foto ${indice + 1}`
+                );
+
+
+                punto.addEventListener(
+                    "click",
+                    () => irSlide(indice)
+                );
+
+
+                indicadores.appendChild(
+                    punto
+                );
+            }
+        );
+
+
+        const puntos =
+            document.querySelectorAll(
+                ".punto"
+            );
+
+
+        puntos[0].classList.add(
+            "activo"
+        );
+
+
+        function mostrarSlide(indice) {
+
+            slides[
+                slideActual
+            ].classList.remove(
+                "activo"
+            );
+
+
+            puntos[
+                slideActual
+            ].classList.remove(
+                "activo"
+            );
+
+
+            slideActual =
+                (
+                    indice
+                    + slides.length
+                )
+                % slides.length;
+
+
+            slides[
+                slideActual
+            ].classList.add(
+                "activo"
+            );
+
+
+            puntos[
+                slideActual
+            ].classList.add(
+                "activo"
+            );
+        }
+
+
+        function moverSlide(direccion) {
+
+            mostrarSlide(
+                slideActual
+                + direccion
+            );
+
+            reiniciarAutoplay();
+        }
+
+
+        function irSlide(indice) {
+
+            mostrarSlide(indice);
+
+            reiniciarAutoplay();
+        }
+
+
+        /* =====================================================
+           AUTOPLAY
+        ====================================================== */
+
+        let autoplay =
+            setInterval(
+                () => {
+                    mostrarSlide(
+                        slideActual + 1
+                    );
+                },
+                5000
+            );
+
+
+        function reiniciarAutoplay() {
+
+            clearInterval(
+                autoplay
+            );
+
+
+            autoplay =
+                setInterval(
+                    () => {
+
+                        mostrarSlide(
+                            slideActual + 1
+                        );
+
+                    },
+                    5000
+                );
+        }
+
+
+        /* =====================================================
+           SWIPE EN CELULAR
+        ====================================================== */
+
+        const carrusel =
+            document.getElementById(
+                "carrusel"
+            );
+
+
+        let inicioX = 0;
+
+
+        carrusel.addEventListener(
+            "touchstart",
+            (evento) => {
+
+                inicioX =
+                    evento.touches[0].clientX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        carrusel.addEventListener(
+            "touchend",
+            (evento) => {
+
+                const finalX =
+                    evento.changedTouches[0]
+                    .clientX;
+
+
+                const diferencia =
+                    finalX - inicioX;
+
+
+                if (
+                    Math.abs(diferencia)
+                    > 50
+                ) {
+
+                    moverSlide(
+                        diferencia < 0
+                            ? 1
+                            : -1
+                    );
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        /* =====================================================
+           TECLADO
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            (evento) => {
+
+                if (
+                    evento.key ===
+                    "ArrowLeft"
+                ) {
+
+                    moverSlide(-1);
+                }
+
+
+                if (
+                    evento.key ===
+                    "ArrowRight"
+                ) {
+
+                    moverSlide(1);
+                }
+            }
+        );
+
+
+        /* =====================================================
+           PAUSAR CARRUSEL AL PASAR EL RATÓN
+        ====================================================== */
+
+        carrusel.addEventListener(
+            "mouseenter",
+            () => {
+
+                clearInterval(
+                    autoplay
+                );
+            }
+        );
+
+
+        carrusel.addEventListener(
+            "mouseleave",
+            () => {
+
+                reiniciarAutoplay();
+            }
+        );
+
+
+        /* =====================================================
+           MÚSICA
+        ====================================================== */
+
+        const musica =
+            document.getElementById(
+                "musica"
+            );
+
+
+        const musicaBtn =
+            document.getElementById(
+                "musicaBtn"
+            );
+
+
+        let musicaActiva = false;
+
+
+        function controlarMusica() {
+
+            if (
+                !musicaActiva
+            ) {
+
+                musica.play()
+                    .then(() => {
+
+                        musicaActiva =
+                            true;
+
+                        musicaBtn.textContent =
+                            "🔇 Pausar música";
+
+                    })
+                    .catch(() => {
+
+                        alert(
+                            "Coloca tu archivo musica.mp3 dentro de la carpeta fotos."
+                        );
+
+                    });
+
+            } else {
+
+                musica.pause();
+
+                musicaActiva =
+                    false;
+
+                musicaBtn.textContent =
+                    "🎵 Música";
+            }
+            musica.play();
+        }
+
+
+        /* =====================================================
+           CONTADOR
+        =====================================================
+
+           IMPORTANTE:
+
+           Cambia esta fecha por la fecha en que comenzaron
+           a conocerse / hablar / estar juntos.
+
+           Formato:
+
+           AAAA-MM-DDTHH:MM:SS
+
+        ====================================================== */
+
+        const fechaInicio =
+            new Date(
+                "2026-01-01T00:00:00"
+            );
+
+
+        function actualizarContador() {
+
+            const ahora =
+                new Date();
+
+
+            const diferencia =
+                ahora - fechaInicio;
+
+
+            if (
+                diferencia < 0
+            ) {
+
+                return;
+            }
+
+
+            const segundosTotales =
+                Math.floor(
+                    diferencia / 1000
+                );
+
+
+            const dias =
+                Math.floor(
+                    segundosTotales
+                    / 86400
+                );
+
+
+            const horas =
+                Math.floor(
+                    (segundosTotales
+                    % 86400)
+                    / 3600
+                );
+
+
+            const minutos =
+                Math.floor(
+                    (segundosTotales
+                    % 3600)
+                    / 60
+                );
+
+
+            const segundos =
+                segundosTotales
+                % 60;
+
+
+            document.getElementById(
+                "dias"
+            ).textContent =
+                dias;
+
+
+            document.getElementById(
+                "horas"
+            ).textContent =
+                String(horas)
+                .padStart(2, "0");
+
+
+            document.getElementById(
+                "minutos"
+            ).textContent =
+                String(minutos)
+                .padStart(2, "0");
+
+
+            document.getElementById(
+                "segundos"
+            ).textContent =
+                String(segundos)
+                .padStart(2, "0");
+        }
+
+
+        actualizarContador();
+
+
+        setInterval(
+            actualizarContador,
+            1000
+        );
+
+    </script>
+
+</body>
+</html>
+```
